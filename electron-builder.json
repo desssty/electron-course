@@ -2,6 +2,7 @@
   "appId": "com.desty.electron-course",
   "files": ["dist-electron", "dist-react"],
   "icon": "/desktopIcon.png",
+  "extraResources": ["dist-electron/preload.cjs"],
   "mac": {
     "target": "dmg"
   },
