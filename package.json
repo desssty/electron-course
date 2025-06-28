@@ -17,13 +17,15 @@
     "dist:win": "npm run transpile:electron && npm run build && electron-builder --win --x64",
     "dist:linux": "npm run transpile:electron && npm run build && electron-builder --linux --x64",
     "dist:mac": "npm run transpile:electron && npm run build && electron-builder --mac --arm64",
-  "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "test:unit": "vitest src"
   },
   "dependencies": {
     "os-utils": "^0.0.14",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "recharts": "^2.15.3"
+    "recharts": "^2.15.3",
+    "vitest": "^3.2.4"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",

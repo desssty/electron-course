@@ -9,6 +9,7 @@ export function createTray(mainWindow: BrowserWindow) {
       process.platform === "darwin" ? "trayIconTemplate.png" : "trayIcon.png"
     )
   );
+
   tray.setContextMenu(
     Menu.buildFromTemplate([
       {
