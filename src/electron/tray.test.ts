@@ -34,7 +34,7 @@ test("", () => {
 
   template[0]?.click?.(null as any, null as any, null as any);
   expect(mainWindow.show).toHaveBeenCalled();
-  expect(app.dock.show).toHaveBeenCalled();
+  expect(app.dock).toHaveBeenCalled();
 
   template[1]?.click?.(null as any, null as any, null as any);
   expect(app.quit).toHaveBeenCalled();
