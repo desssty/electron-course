@@ -38,8 +38,24 @@ export default function App() {
   }, []);
 
   return (
-    <div style={{ height: "120px" }}>
-      <Chart data={activeUsage} maxDataPoints={10} selectedView="CPU" />
+    <div>
+      <header>
+        <button
+          id="close"
+          onClick={() => window.electron.sendFrameAction("CLOSE")}
+        />
+        <button
+          id="minimize"
+          onClick={() => window.electron.sendFrameAction("MINIMIZE")}
+        />
+        <button
+          id="maximize"
+          onClick={() => window.electron.sendFrameAction("MAXIMIZE")}
+        />
+      </header>
+      <div style={{ height: "120px" }}>
+        <Chart data={activeUsage} maxDataPoints={10} selectedView="CPU" />
+      </div>
     </div>
   );
 }

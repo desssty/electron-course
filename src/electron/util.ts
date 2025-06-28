@@ -19,6 +19,19 @@ export function ipcMainHandle<Key extends keyof EventPayLoadMapping>(
   });
 }
 
+export function ipcMainOn<Key extends keyof EventPayLoadMapping>(
+  key: Key,
+  handler: (payload: EventPayLoadMapping[Key]) => void
+) {
+  ipcMain.on(key, (event, payload) => {
+    if (!event.senderFrame) {
+      throw new Error("Invalid or destroyed sender frame");
+    }
+    validateEventFrame(event.senderFrame);
+    return handler(payload);
+  });
+}
+
 export function ipcWebContentsSend<Key extends keyof EventPayLoadMapping>(
   key: Key,
   webContents: WebContents,
