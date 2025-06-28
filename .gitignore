@@ -7,19 +7,45 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-react
-dist-electron
-*.local
+# Node modules
+/node_modules/
+
+# Build outputs
+/dist/
+/dist-react/
+/dist-electron/
+/build/
+/out/
+*.tsbuildinfo
+
+# Electron builds
+*.exe
+*.dmg
+*.AppImage
+*.snap
+*.deb
+*.rpm
+*.msi
+*.zip
+*.tar.gz
 
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
-.idea
+.idea/
 .DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
+# Environment files
+.env
+.env.*
