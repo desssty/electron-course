@@ -12,7 +12,7 @@ It showcases a modular approach to structuring both the Electron main process an
 - [Playwright](https://playwright.dev/) – end-to-end testing
 - [Vitest](https://vitest.dev/) – unit testing
 
-## 📂 Project Structure
+## 📦 Project Structure
 
 - `src/electron/` – Main process logic (application lifecycle, tray, menu, system resource management, IPC)
 - `src/ui/` – Renderer process (React-based user interface)
