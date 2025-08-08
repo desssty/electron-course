@@ -1,54 +1,56 @@
-# React + TypeScript + Vite
+# Electron Course
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Electron Course** is a learning project demonstrating how to build a desktop application using **Electron**, **React**, and **TypeScript**.  
+It showcases a modular approach to structuring both the Electron main process and the React renderer process, as well as implementing advanced desktop-specific features such as a custom window frame, system tray integration, and fully type-safe IPC communication.
 
-Currently, two official plugins are available:
+## 🚀 Technologies
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Electron](https://www.electronjs.org/) – cross-platform desktop development
+- [React 19](https://react.dev/) – building the user interface
+- [TypeScript](https://www.typescriptlang.org/) – static type checking
+- [Vite](https://vitejs.dev/) – fast build and development server
+- [Playwright](https://playwright.dev/) – end-to-end testing
+- [Vitest](https://vitest.dev/) – unit testing
 
-## Expanding the ESLint configuration
+## 📂 Project Structure
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- `src/electron/` – Main process logic (application lifecycle, tray, menu, system resource management, IPC)
+- `src/ui/` – Renderer process (React-based user interface)
+- `e2e/` – End-to-end tests using Playwright
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## ⚙️ Available Scripts
+
+```bash
+# Start application in development mode
+npm run dev
+
+# Build the application
+npm run build
+
+# Create Windows distributable
+npm run dist:win
+
+# Create Linux distributable
+npm run dist:linux
+
+# Create macOS distributable
+npm run dist:mac
+
+# Run E2E tests
+npm run test:e2e
+
+# Run unit tests
+npm run test:unit
+
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🙏 Credits
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+This project was created as part of a learning process and was inspired by:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+🎥 [Build an Electron App with React and TypeScript](https://www.youtube.com/watch?v=fP-371MN0Ck&t=933s)  
+Author: [freeCodeCamp.org](https://www.freecodecamp.org/)
+
+📂 Reference repository: [N-Ziermann-YouTube/electron-course](https://github.com/N-Ziermann-YouTube/electron-course)
+
+> ⚠️ This is a non-production educational project intended for exploring desktop application development with Electron, React, and TypeScript.
